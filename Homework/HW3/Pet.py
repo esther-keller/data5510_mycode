@@ -53,3 +53,18 @@ print('-----------Average Lifespan-------------------')
 for pet in pets:
     print(f"The average lifespan of a {pet.species} is {pet.get_average_lifespan()} years.")
 print()
+
+
+
+
+
+'''AI Prompts--------
+okay ignore the lats part of the instructions where it says to calculate the average age. Other than that, does this code meet the requirements so far?
+
+teach me about dictionaries
+
+how do i make this code more efficient
+teach me about dictionaries again
+tell me more about the class variable species issue
+does this code match the instructions? don't tell me the correct answer, but point out weak points in my code
+'''
