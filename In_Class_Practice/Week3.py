@@ -39,5 +39,3 @@ print(andy.get_name())
 print('---------')
 andy.set_anum('a00000001')
 print(andy.get_anum())
-
-'''--------Practice---------'''
