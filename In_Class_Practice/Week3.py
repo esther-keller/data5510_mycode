@@ -21,17 +21,23 @@ class Student:
     def get_name(self):
         return self.name
 #setters
-    def set_anum(self):
+    def set_anum(self,anum):
         self.__anum = anum
-    def set_ssn(self):
+    def set_ssn(self,ssn):
         self.__ssn = ssn
-    def set_gpa(self):
+    def set_gpa(self,gpa):
         self.__gpa = gpa
-    def set_name(self):
+    def set_name(self,name):
         self.name = name
+#calculations
+    def calculate_gpa(self):
+        pass
+        #add in the logic
 
-
-#andy = Student('a00001','andy')
-
+andy = Student('a00001',123456,3.9,'andy')
+print(andy.get_name())
+print('---------')
+andy.set_anum('a00000001')
+print(andy.get_anum())
 
 '''--------Practice---------'''
