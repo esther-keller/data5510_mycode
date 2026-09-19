@@ -99,4 +99,3 @@ students_5500 = [s1,s2,s3,s4]
 #loop through all students
 for student in students_5500:
     print(student.get_first_name(), student.is_full_time_student())
-    print() #this is so that I can see my output more clearly
