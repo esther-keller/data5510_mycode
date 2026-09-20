@@ -19,6 +19,8 @@ def calculate_score(hand):
 #Display Welcome Message
 print('Welcome to my terminal! Today we will play BlackJack!')
 print('------------------')
+print() #spacing like this is used periodically to break up the text
+print()
 
 #create variables 
 play_again = 'y'
@@ -33,10 +35,14 @@ while play_again == 'y':
     #before shuffle:
     print("Confirm New Deck:")
     deck.print_deck()
+    print()
+    print()
     #confirm shuffle:
     deck.shuffle_deck()
     print('Confirm Shuffle Deck:')
     deck.print_deck()
+    print()
+    print()
 
     #create hand lists and start their scores
     dealer_hand = []
@@ -57,6 +63,7 @@ while play_again == 'y':
 
     player_score = calculate_score(player_hand)
     print("Your score is: ",player_score)
+    print()
 
     #create hit loop
     while player_score <= 21:
@@ -67,6 +74,7 @@ while play_again == 'y':
             print("Card", len(player_hand), ":", player_hand[-1]) #come back to this and figure out how to not hard code "card 3, card 4" etc
             player_score = calculate_score(player_hand)
             print("Your score is: ",player_score)
+            print()
             if player_score > 21:
                 print("You busted! You lose!")
                 games_lost += 1
@@ -74,15 +82,18 @@ while play_again == 'y':
                 break
         elif hit == 'n':
             #end and print the score for them
+            print()
             print("Final score = ", player_score)
             break
         else: 
             print("Invalid-- try again (y/n)")
+            print()
 
     #dealer logic
     if player_busted == False:
         print("Dealer card 1: ", dealer_hand[0])
         print("Dealer card 2: ", dealer_hand[1])
+        print()
         dealer_score = calculate_score(dealer_hand)
 
         while dealer_score < 17:
@@ -90,6 +101,7 @@ while play_again == 'y':
             dealer_score = calculate_score(dealer_hand)
             print("Dealer hits: ", dealer_hand[-1])
             print("Dealer score:",dealer_score)
+            print()
 
         #comparison logic - who wins?
         if dealer_score > 21:
@@ -116,4 +128,5 @@ while play_again == 'y':
         print("Total # of games won: ", games_won)
         print("Total # of games lost: ", games_lost)
         print("Win/Loss percentage: ", round(((games_won / num_times_played)*100),2),"%")
+        print()
         print('Thanks for playing today!')
