@@ -67,7 +67,7 @@ while play_again == 'y':
 
     #create hit loop
     while player_score <= 21:
-        hit = input("Would you like to hit? (y/n): ")
+        hit = input("Would you like to hit? (y/n): ").lower()
         if hit == 'y':
             #deal 1 new card + recalculate score
             player_hand.append(deck.get_card())
@@ -93,6 +93,7 @@ while play_again == 'y':
     if player_busted == False:
         print("Dealer card 1: ", dealer_hand[0])
         print("Dealer card 2: ", dealer_hand[1])
+        print("Dealer score: ", calculate_score(dealer_hand))
         print()
         dealer_score = calculate_score(dealer_hand)
 
@@ -104,24 +105,24 @@ while play_again == 'y':
             print()
 
         #comparison logic - who wins?
-        if dealer_score > 21:
-            print("Dealer busted, YOU WIN!!!!!!!")
-            print("Dealer's Final Score: ", dealer_score)
-            print("Your Final Score: ", player_score)
-            games_won += 1
-        elif player_score > dealer_score:
-            print("Your score is higher, YOU WIN!!!!!!!!")
-            print("Dealer's Final Score: ", dealer_score)
-            print("Your Final Score: ", player_score)
-            games_won += 1
-        else: 
-            print("Dealer score is equal or higher so YOU LOSE!!!!!!")
+    if dealer_score > 21:
+        print("Dealer busted, YOU WIN!!!!!!!")
+        print("Dealer's Final Score: ", dealer_score)
+        print("Your Final Score: ", player_score)
+        games_won += 1
+    elif player_score > dealer_score:
+        print("Your score is higher, YOU WIN!!!!!!!!")
+        print("Dealer's Final Score: ", dealer_score)
+        print("Your Final Score: ", player_score)
+        games_won += 1
+    else: 
+            print("Dealer score is equal to or higher than your score, so YOU LOSE!!!!!!")
             print("Dealer's Final Score: ", dealer_score)
             print("Your Final Score: ", player_score)
             games_lost += 1
 
     #ask if they want to play more games
-    play_again = input("Would you like to play again? (y/n)")
+    play_again = input("Would you like to play again? (y/n)").lower()
     if play_again == 'n':
         print("---------------")
         print('Total # of games played: ',num_times_played)
