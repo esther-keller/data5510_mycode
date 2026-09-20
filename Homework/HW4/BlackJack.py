@@ -103,19 +103,20 @@ while play_again == 'y':
             print("Dealer hits: ", dealer_hand[-1])
             print("Dealer score:",dealer_score)
             print()
+        print("Dealer Final Score: ", dealer_score)
 
         #comparison logic - who wins?
-    if dealer_score > 21:
-        print("Dealer busted, YOU WIN!!!!!!!")
-        print("Dealer's Final Score: ", dealer_score)
-        print("Your Final Score: ", player_score)
-        games_won += 1
-    elif player_score > dealer_score:
-        print("Your score is higher, YOU WIN!!!!!!!!")
-        print("Dealer's Final Score: ", dealer_score)
-        print("Your Final Score: ", player_score)
-        games_won += 1
-    else: 
+        if dealer_score > 21:
+            print("Dealer busted, YOU WIN!!!!!!!")
+            print("Dealer's Final Score: ", dealer_score)
+            print("Your Final Score: ", player_score)
+            games_won += 1
+        elif player_score > dealer_score:
+            print("Your score is higher, YOU WIN!!!!!!!!")
+            print("Dealer's Final Score: ", dealer_score)
+            print("Your Final Score: ", player_score)
+            games_won += 1
+        else: 
             print("Dealer score is equal to or higher than your score, so YOU LOSE!!!!!!")
             print("Dealer's Final Score: ", dealer_score)
             print("Your Final Score: ", player_score)
