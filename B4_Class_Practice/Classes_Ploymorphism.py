@@ -38,7 +38,8 @@ car_lot = [andys_car,johnnys_car,jennys_car,gregs_car]
 total_value = 0.0
 
 for car in car_lot:
+    print(type(car))
     total_value = car.current_value(2026)
 
-print(type(self.car)) #when you print just the object, it gives you the string version (the memory address)
+#when you print just the object, it gives you the string version (the memory address)
 print("all cars value: ", round(total_value,2))
