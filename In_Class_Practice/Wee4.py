@@ -51,51 +51,46 @@ for employee in dct['employees']:
 
 
 '''----------Web JSON API Duck example:----------'''
-example_url = "https://api.datamuse.com/words?ml=duck"
-
 import json
 import requests
 
-word = 'duck'
-search_word = 'ducky'
+example_url = "https://api.datamuse.com/words?ml="
 
-#get all keys you need to extract data - notice that we don't need everything!
-key_word = 'word'
-key_score = 'score'
+word = "duck"
 
 url = example_url + word
 print(url)
-
-
-request = requests.get(url)
-dct_full = json.loads(request.text) #load s = load string --> turns all text into python dictionary
-
-print(dct_full)
-#input('pause')
-
-
-
-'''programming activity'''
-#print the word scroe associated with 'dunk'
-
-example_url = "https://api.datamuse.com/words?ml=duck"
-
-#import json
-#import requests
-
-word = 'duck'
-search_word = 'dunk'
-
-#get all keys you need to extract data - notice that we don't need everything!
-key_word = 'word'
-key_score = 'score'
-
-url = example_url + word
-print(url)
-
 
 request = requests.get(url)
 dct_full = json.loads(request.text)
 
 print(dct_full)
-input('pause')
+print()
+print()
+
+for item in dct_full:
+    if item['word'] == 'dunk':
+        print(item['score'])
+print()
+print()
+
+#part 2 - smthing wrong here figure it out
+word = 'aggies'
+key_word = 'word'
+key_score = 'score'
+search_word = 'usu'
+
+url = 'https://api.datamuse.com/words?ml=' + word
+print(url)
+print()
+print()
+
+
+dct_full = json.loads(request.text)
+print(dct_full)
+
+
+for dct in dct_full:
+    if dct['word'] == search_word: 
+        val = dct['score']
+print(val)
