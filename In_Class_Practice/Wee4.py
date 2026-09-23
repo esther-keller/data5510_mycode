@@ -73,7 +73,7 @@ for item in dct_full:
         print(item['score'])
 print()
 print()
-
+'''
 #part 2 - smthing wrong here figure it out
 word = 'aggies'
 key_word = 'word'
@@ -93,4 +93,21 @@ print(dct_full)
 for dct in dct_full:
     if dct['word'] == search_word: 
         val = dct['score']
-print(val)
+print(val)'''
+
+
+#practice again lol
+#how much is it to buy 1 solana coin in USD
+import requests
+import json
+
+url = 'https://api.coingecko.com/api/v3/coins/solana/history?date=23-09-2026&localization=false'
+
+key_md = 'market_data'
+key_cp = 'current_price'
+key_usd = 'usd'
+
+req = requests.get(url)
+d = json.loads(req.text)
+
+print(d[key_md][key_cp][key_usd])
