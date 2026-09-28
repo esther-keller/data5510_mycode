@@ -1,9 +1,11 @@
 '''--------Notes---------
 3 pillers of object oriented programming: 
+-------------------------------------------
+1. Incapsulation - Controls around your data (can make data private so that it's controled by the functions in the class itself, not foregin hackers (self.__xxx = xxx))
+2. Inheritence - Extending data and functionality to a child class
+3. Polymorphism - the type of object you use is decided at run time
 
-1. incapsulation - Controls around your data (can make data private so that it's controled by the functions in the class itself, not foregin hackers (self.__xxx = xxx))
-2. inheritence - Extending functionality to a child class
-3. Polymorphism - ability to extend functionality from multiple classes
+polymorphism doesn't break the code because of inheritence
 '''
 class Student: 
     def __init__(self,anum,ssn,gpa,name):
