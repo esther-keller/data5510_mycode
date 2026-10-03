@@ -1,7 +1,4 @@
-#import everything
-
-'''
-Your program should compute the following statistics and print the output
+'''Your program should compute the following statistics and print the output
 for each state:
 
 State name: <STATE>
@@ -9,8 +6,7 @@ State name: <STATE>
 Average number of new weekly cases for the entire state dataset:
 Date with the highest new number of covid cases:
 Month and Year, with the highest new number of covid cases:
-Month and Year, with highest new number, percentage of population:
-'''
+Month and Year, with highest new number, percentage of population:'''
 
 # Import everything
 import requests
@@ -27,15 +23,24 @@ BASE_URL = f"https://data.cdc.gov/resource/{DATASET_ID}.json"
 state_populations = {}
 
 with open("states.csv", "r") as file:
-
     reader = csv.reader(file)
 
     for row in reader:
-
         state = row[0]
         population = int(row[1])
-
         state_populations[state] = population
+
+#Track Highest / Lowest
+highest_percent = 0
+lowest_percent = float('inf')
+highest_state = ""
+lowest_state = ""
+highest_month_name = ""
+lowest_month_name = ""
+highest_month_cases_total = 0
+lowest_month_cases_total = 0
+highest_population = 0
+lowest_population = 0
 
 # Go through every state
 for state in state_populations:
@@ -89,6 +94,21 @@ for state in state_populations:
     percent_population = round(
         (highest_month_cases / population) * 100, 2)
 
+    # Update Summary Across All States
+    if percent_population > highest_percent:
+        highest_percent = percent_population
+        highest_state = state
+        highest_month_name = formatted_month
+        highest_month_cases_total = highest_month_cases
+        highest_population = population
+
+    if percent_population < lowest_percent:
+        lowest_percent = percent_population
+        lowest_state = state
+        lowest_month_name = formatted_month
+        lowest_month_cases_total = highest_month_cases
+        lowest_population = population
+
     # Print Output
     print(f"----------------State name: {state}----------------")
     print()
@@ -105,3 +125,18 @@ for state in state_populations:
     print(f"{percent_population}% (Population: {population})")
     print()
     print("-" * 60)
+
+    #print part 2
+print()
+print("=" * 20 + " SUMMARY ACROSS ALL STATES " + "=" * 20)
+print()
+print("State with HIGHEST percentage of population during its highest month:")
+print(f"{highest_state} - {highest_percent}% in {highest_month_name} "
+    f"({highest_month_cases_total} cases; Population: {highest_population})")
+print()
+print("State with LOWEST percentage of population during its highest month:")
+print(f"{lowest_state} - {lowest_percent}% in {lowest_month_name} "
+    f"({lowest_month_cases_total} cases; Population: {lowest_population})")
+
+print()
+print('Done Printing All ' + str(len(state_populations)) + 'States')
