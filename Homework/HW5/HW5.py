@@ -37,7 +37,6 @@ dict_full = json.loads(req.text)
     #loop thorugh dictionaries and pull out new_cases
 for item in dict_full:
     print('new_cases: ', item[new_cases_key])
-    new_cases.append(item[new_cases_key])
+    new_cases.append(float(item[new_cases_key]))
     print()
 
-print(new_cases)
