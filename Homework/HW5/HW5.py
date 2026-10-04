@@ -55,6 +55,9 @@ for state in state_populations:
     req = requests.get(BASE_URL, params=params)
     state_records = json.loads(req.text)
 
+    with open(f"/Users/est_kell/Projects/data5510_mycode/Homework/HW5/FinalJsonData/{state}.json", "w") as file:
+        json.dump(state_records, file, indent=4)
+
     # Average Weekly Cases
     new_cases = []
 
@@ -138,5 +141,6 @@ print("State with LOWEST percentage of population during its highest month:")
 print(f"{lowest_state} - {lowest_percent}% in {lowest_month_name} "
     f"({lowest_month_cases_total} cases; Population: {lowest_population})")
 
+#tell the user you're done printing all states
 print()
 print('Done Printing All ' + str(len(state_populations)) + 'States')
