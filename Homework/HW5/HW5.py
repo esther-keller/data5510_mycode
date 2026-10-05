@@ -143,4 +143,4 @@ print(f"{lowest_state} - {lowest_percent}% in {lowest_month_name} "
 
 #tell the user you're done printing all states
 print()
-print('Done Printing All ' + str(len(state_populations)) + 'States')
+print('Done Printing All ' + str(len(state_populations)) + ' States')
