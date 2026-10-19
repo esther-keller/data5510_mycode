@@ -25,6 +25,7 @@ print('Maximum Difference: ', max_diff)
 '''----Comments----
 Time Complexity: O(n)
 
-
-
+The loop visits each element in the array once
+if the array contains n elements, the loop executes n times
+the comparisons inside the loop are O(1)
 '''

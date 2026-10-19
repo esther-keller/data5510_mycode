@@ -6,7 +6,7 @@ Analyze the time complexity of your solution using Big O notation,
 especially what is the Big O notation of the code you wrote,
 and include it in the comments of your program.'''
 
-# test code w/o big o to learn how it works
+# sum all the numbers in the array
 nums = [4,7,2,9]
 total = 0
 

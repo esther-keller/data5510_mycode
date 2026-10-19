@@ -7,7 +7,7 @@ especially what is the Big O notation of the code you wrote,
 and include it in the comments of your program.'''
 
 # find the second largest number in the array
-nums = [11,45,0,5,3,8,2,7,4]
+nums = [11, 45, 0, 5, 3, 8, 2, 7, 4]
 largest = nums[0] #keep track of largest to compare to second largest
 second_largest = nums[0]
 
