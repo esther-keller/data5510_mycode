@@ -20,12 +20,17 @@ def insert(root,value):
 
     return root
 
+
+
+
+
+#test to see if insert words
+'''
 def inorder(root):
     if root:
         inorder(root.left)
         print(root.value)
         inorder(root.right)
-
 
 root = None
 
@@ -34,4 +39,4 @@ root = insert(root, 5)
 root = insert(root, 15)
 root = insert(root, 12)
 
-inorder(root)
+inorder(root)'''

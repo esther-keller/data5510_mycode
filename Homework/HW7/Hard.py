@@ -19,9 +19,9 @@ subtree remains unchanged.
 
 2 Children:
 BST deletion algorithms chose betwen either taking the largest value fromt the 
-left subtree  or the smallest value from the right subtree to replace the deleted 
-node. These values are chosen becuause they presever the BST ordering protocol 
-after deletion.
+left subtree  or the smallest value from the right subtree (the in-order successor)
+ to replace the deleted node. These values are chosen becuause they presever the 
+ BST ordering protocol after deletion.
 Once a node has been copied into the deleted nodes position, we can delete it 
 from it's origional spot on the BST. 
 
